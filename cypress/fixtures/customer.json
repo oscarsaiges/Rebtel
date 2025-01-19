@@ -1,0 +1,11 @@
+{
+  "firstName": "Harry",
+  "lastName": "Dynamit",
+  "postCode": "78451",
+  "accountNumber": "1016",
+  "currency": {
+    "pound": "Pound",
+    "dollar": "Dollar",
+    "rupee": "Rupee"
+  }
+}
