@@ -27,6 +27,7 @@
 import customer from '../fixtures/customer.json'
 import fields from '../fixtures/fields.json'
 import bankUrl from '../fixtures/bankUrl.json'
+import buttons from '../fixtures/buttons.json'
 
 Cypress.Commands.add('fillInput', (placeholder, value) => {
     cy.get(`input[placeholder*="${placeholder}"]`)
@@ -39,14 +40,18 @@ Cypress.Commands.add('assertInTable', (value) => {
     cy.get('td').contains(value).should('be.visible')
 })
 
+Cypress.Commands.add('submitForm', () => {
+    cy.get('form[name*=myForm]').submit()
+})
+
 Cypress.Commands.add('createCustomer', () => {
 
     // Visit site and navigate to bank manager page
     cy.visit(bankUrl.home)
-    cy.get('button').contains('Bank Manager Login').click()
+    cy.get('button').contains(buttons.bankManagerLogin).click()
 
     // Navigate to add customer page
-    cy.get('button').contains('Add Customer').click()
+    cy.get('button').contains(buttons.addCustomer).click()
     
     // Fill form
     cy.fillInput(fields.firstName, customer.firstName)
@@ -54,27 +59,27 @@ Cypress.Commands.add('createCustomer', () => {
     cy.fillInput(fields.postCode, customer.postCode)
 
     // Submit form
-    cy.get('form').submit()
+    cy.submitForm()
 
     // Visit home
-    cy.get('button').contains('Home').click()
+    cy.get('button').contains(buttons.home).click()
 })
 
 Cypress.Commands.add('createCustomerAccount', () => {
 
     // Visite bank manager page
-    cy.get('button').contains('Bank Manager Login').click()
+    cy.get('button').contains(buttons.bankManagerLogin).click()
     
     // Navigate to open customer account page
-    cy.get('button').contains('Open Account').click()
+    cy.get('button').contains(buttons.openAccount).click()
 
     // Select customer and currency
     cy.get('#userSelect').select(`${customer.firstName} ${customer.lastName}`)
     cy.get('#currency').select(2)
 
     // Submit form
-    cy.get('form[name*=myForm]').submit()
+    cy.submitForm()
 
     // Visit home
-    cy.get('button').contains('Home').click()
+    cy.get('button').contains(buttons.home).click()
 })

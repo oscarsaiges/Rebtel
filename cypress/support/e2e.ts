@@ -1,19 +1,3 @@
-// ***********************************************************
-// This example support/e2e.js is processed and
-// loaded automatically before your test files.
-//
-// This is a great place to put global configuration and
-// behavior that modifies Cypress.
-//
-// You can change the location of this file or turn off
-// automatically serving support files with the
-// 'supportFile' configuration option.
-//
-// You can read more here:
-// https://on.cypress.io/configuration
-// ***********************************************************
-
-// Import commands.js using ES2015 syntax:
 import './commands'
 
 declare global {
@@ -21,7 +5,7 @@ declare global {
         interface Chainable {
 
         /**
-         * Custom command to find a input field in a form.
+         * Custom command to find given input field in a form.
          * Searching for corresponding placeholder and then insert text.
          * @example cy.findInput('City', 'Uppsala')
          */
@@ -33,6 +17,12 @@ declare global {
          */
         assertInTable(value: string): Chainable<JQuery<HTMLElement>>
 
+        /**
+         * Custom command to submit form
+         * @example cy.submitForm()
+         */
+            submitForm(): Chainable<JQuery<HTMLElement>>
+            
         /**
          * Custom command that creates a customer
          * @example cy.createCustomer()

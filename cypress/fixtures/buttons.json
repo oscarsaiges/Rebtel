@@ -1,0 +1,11 @@
+{
+  "home" : "Home",
+  "addCustomer": "Add Customer",
+  "bankManagerLogin": "Bank Manager Login",
+  "customers": "Customers",
+  "customerLogin": "Customer Login",
+  "transaction": "Transactions",
+  "deposit": "Deposit",
+  "withdrawl": "Withdrawl",
+  "openAccount": "Open Account"
+}
