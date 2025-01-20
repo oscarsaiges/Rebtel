@@ -28,6 +28,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+          branch: gh-pages
+          base: https://github.com/oscarsaiges/Rebtel.git
       - name: Cache dependencies
         uses: actions/cache@v4
         with:
