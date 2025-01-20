@@ -15,12 +15,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - name: Install ts-node
-        run: npm install --save-dev ts-node
       - name: Install all dependencies
         run: npm install
       - name: Run Cypress tests
-        run: npm run cypress:run
+        run: npm run test:electron
       - name: Merge Mochawesome reports
         run: npm run report:merge
       - name: Generate HTML report
