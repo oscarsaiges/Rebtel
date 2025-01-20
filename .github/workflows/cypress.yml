@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: '18'
       - name: Install all dependencies
-        run: npm ci
+        run: npm install
       - name: Run Cypress tests in headless mode using electron
         run: npx cypress run
       - name: Cache dependencies
