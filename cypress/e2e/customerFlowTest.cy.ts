@@ -59,10 +59,5 @@ describe('Customer flow - ', () => {
 
             })
         })
-
-
-
-
-
     })
 })

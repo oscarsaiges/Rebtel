@@ -28,6 +28,5 @@ Reports will be generated with Mochawesome.
   Visite https://oscarsaiges.github.io/Rebtel/ 
   to se the latest reports from the CI/CD build.
   A new report vill be generated after each pull request or push.
-  (If site returns 404 there might be something wrong with the github page setup. If so, please run tests localy and open the report in any browser).
 
 Happy testing!
