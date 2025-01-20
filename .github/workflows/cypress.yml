@@ -17,8 +17,17 @@ jobs:
           node-version: '18'
       - name: Install all dependencies
         run: npm install
-      - name: Run Cypress tests in headless mode using electron
-        run: npx cypress run
+      - name: Run Cypress tests
+        run: npm run test:chrome
+      - name: Merge Mochawesome reports
+        run: npm run report:merge
+      - name: Generate HTML report
+        run: npx mochawesome-report-generator cypress/reports/merged-report.json -o ./public
+      - name: Deploy report page
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
       - name: Cache dependencies
         uses: actions/cache@v4
         with:
