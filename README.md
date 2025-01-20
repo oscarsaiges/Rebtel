@@ -30,6 +30,6 @@ Reports will be generated with Mochawesome.
   A new report vill be generated after each pull request or push.
 
   (One issue remians. When pushing to main the index.html get removed from gh-pages branch. 
-   To view test-report's in browser: add the index.html file, found in root, to the gh-pages branch and let it build.)
+   To view test-report's in browser: add the index.html file, found in root, to the gh-pages branch and let it build. Visit report page once before your first commit.)
 
 Happy testing!
