@@ -2,6 +2,7 @@ const { defineConfig } = require("cypress");
 
 export default defineConfig({
   e2e: {
+  baseUrl: 'https://globalsqa.com/angularJs-protractor/BankingProject/#/login',
   reporter: 'mochawesome',
     reporterOptions: {
       reportDir: 'cypress/reports',
