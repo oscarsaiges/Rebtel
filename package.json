@@ -1,7 +1,7 @@
 {
     "scripts": {
         "test:electron": "cypress run",
-        "report:merge": "npx mochawesome-merge cypress/reports/*.json -o cypress/reports/merged-report.json"
+        "report:merge": "npx mochawesome-merge cypress/reports/*.json -o cypress/reports/index.json"
     },
     "devDependencies": {
         "cypress": "^13.17.0",
