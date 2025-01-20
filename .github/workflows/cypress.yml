@@ -1,0 +1,35 @@
+name: Rebtel Cypress Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  cypress-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      - name: Install all dependencies
+        run: npm ci
+      - name: Run Cypress tests in headless mode using electron
+        run: npx cypress run
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-modules-
+      - name: Cache build output
+        uses: actions/cache@v4
+        with:
+          path: ./build
+          key: ${{ runner.os }}-build-output-${{ hashFiles('**/*.html') }}
+          restore-keys: |
+            ${{ runner.os }}-build-output-
