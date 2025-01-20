@@ -18,7 +18,7 @@ jobs:
       - name: Install all dependencies
         run: npm install
       - name: Run Cypress tests
-        run: npm run test:electron
+        run: npm run cypress:run
       - name: Merge Mochawesome reports
         run: npm run report:merge
       - name: Generate HTML report
