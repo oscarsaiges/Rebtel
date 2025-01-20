@@ -1,6 +1,6 @@
 {
     "scripts": {
-        "test:electron": "npx cypress run",
+        "test:electron": "cypress run",
         "report:merge": "npx mochawesome-merge cypress/reports/*.json -o cypress/reports/merged-report.json"
     },
     "devDependencies": {
